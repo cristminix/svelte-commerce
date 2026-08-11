@@ -19,13 +19,33 @@
 	const useremail = $derived(firstOrder?.userEmail || firstOrder?.shippingAddress?.email)
 	const orderNo = $derived(page.url.searchParams.get('order_no') || firstOrder?.orderNo)
 
-	const estimatedDeliveryDateMachine = $derived.by(() => {
-		if (!firstOrder) return ''
-		const date = new Date(firstOrder.createdAt)
-		const days = firstOrder.shippingRate?.estimatedMaxDays || 7
-		date.setDate(date.getDate() + days)
-		return date.toISOString().split('T')[0]
-	})
+		const estimatedDeliveryDateMachine = $derived.by(() => {
+			if (!firstOrder) return ''
+			const date = new Date(firstOrder.createdAt)
+			const days = firstOrder.shippingRate?.estimatedMaxDays || 7
+			date.setDate(date.getDate() + days)
+			return date.toISOString().split('T')[0]
+		})
+
+		const googleReviewsHtml = $derived(
+			data?.store?.plugins?.googleReviewsOptIn?.active
+				? `<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+		  <script>
+		    window.renderOptIn = function() {
+		      window.gapi.load('surveyoptin', function() {
+		        window.gapi.surveyoptin.render(
+		          {
+		            "merchant_id": "${data?.store?.plugins?.googleReviewsOptIn?.merchantId}",
+		            "order_id": "${orderNo}",
+		            "email": "${cartState?.cart?.email}",
+		            "delivery_country": "${firstOrder?.shippingAddress?.countryCode}",
+		            "estimated_delivery_date": "${estimatedDeliveryDateMachine}",
+		          });
+		      });
+		    }
+		  </script>`
+				: ''
+		)
 
 	const estimatedDeliveryDateDisplay = $derived.by(() => {
 		if (!firstOrder) return ''
@@ -238,25 +258,8 @@
 	</div>
 </div>
 
-{#if data?.store?.plugins?.googleReviewsOptIn?.active}
-	{@html `<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
-  <script>
-    window.renderOptIn = function() {
-      window.gapi.load('surveyoptin', function() {
-        window.gapi.surveyoptin.render(
-          {
-            // REQUIRED FIELDS
-            "merchant_id": ${data?.store?.plugins?.googleReviewsOptIn?.merchantId},
-            "order_id": "${orderNo}",
-            "email": "${cartState?.cart?.email}",
-            "delivery_country": "${firstOrder?.shippingAddress?.countryCode}",
-            "estimated_delivery_date": "${estimatedDeliveryDateMachine}",
-
-            // OPTIONAL FIELDS
-          });
-      });
-    }
-  </script>`}
+{#if googleReviewsHtml}
+	{@html googleReviewsHtml}
 {/if}
 
 <style>
