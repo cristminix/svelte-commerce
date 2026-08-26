@@ -10,6 +10,7 @@
 	import { Button } from '$lib/components/ui/button/index.js'
 	import { page } from '$app/state'
 	import Textbox from '../form/textbox.svelte'
+	import { autofocus } from '$lib/core/actions/autofocus.js'
 
 	type FilterProps = {
 		class?: string
@@ -89,7 +90,7 @@
 						placeholder="Search categories"
 						class="ed-df__search w-full rounded-md border-0 py-2 pl-3 text-sm ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
 						onkeydown={filterState.handleCategorySearchKeyDown}
-						autofocus
+						use:autofocus
 					/>
 					<Button
 						variant="ghost"
@@ -193,7 +194,7 @@
 						placeholder="Search tags"
 						class="ed-df__search w-full rounded-md border-0 py-2 pl-3 text-sm ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
 						onkeydown={filterState.handleTagSearchKeyDown}
-						autofocus
+						use:autofocus
 					/>
 					<Button
 						variant="ghost"

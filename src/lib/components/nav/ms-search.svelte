@@ -10,6 +10,13 @@
 	let { class: className = '', placeholder = 'Search...', handleCloseSearch = () => {} } = $props()
 
 	let search = $state('')
+	// Input is only mounted while the search panel is open (see the {#if expandSearch &&
+	// showSearchResults} block below), so focusing it here on mount is the equivalent of
+	// `autofocus` without tripping Svelte's a11y_autofocus warning.
+	let searchInputRef = $state<HTMLInputElement | null>(null)
+	$effect(() => {
+		searchInputRef?.focus()
+	})
 </script>
 
 <!-- Editorial search styling for the default theme only (scoped via [data-theme='default']). -->
@@ -79,6 +86,7 @@
 						<div class="ed-search-head flex items-center gap-3 border-b border-gray-100 p-4">
 							<Search class="h-5 w-5 text-gray-400" />
 							<Input
+								bind:ref={searchInputRef}
 								type="text"
 								class="flex-1 border-none bg-transparent text-sm sm:text-lg shadow-none focus-visible:ring-0"
 								bind:value={search}
@@ -86,7 +94,6 @@
 								aria-label={searchPlugin?.placeholder || 'Search products'}
 								autocomplete="off"
 								enterkeyhint="search"
-								autofocus
 								onkeydown={handleKeyDown}
 							/>
 							<Button

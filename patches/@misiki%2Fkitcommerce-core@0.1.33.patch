@@ -1,0 +1,60 @@
+diff --git a/node_modules/@misiki/kitcommerce-core/.bun-tag-e0ffaed0195f64f4 b/.bun-tag-e0ffaed0195f64f4
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/dist/components/plugins/google-analytics.svelte b/dist/components/plugins/google-analytics.svelte
+index aa1740a7d0625c0f87f164528a6b655d104d92de..8d32e913beba83599ef14e32f0cf7d2949b8d558 100644
+--- a/dist/components/plugins/google-analytics.svelte
++++ b/dist/components/plugins/google-analytics.svelte
+@@ -47,7 +47,7 @@
+ </script>
+ 
+ <!-- Add noscript fallback iframe for users with JavaScript disabled -->
+-{#if googleTagManagerPlugin.isActive && gtagId}
++{#if googleTagManagerPlugin?.isActive && gtagId}
+ 	<noscript>
+ 		<iframe
+ 			src="https://www.googletagmanager.com/ns.html?id={gtagId}"
+diff --git a/dist/composables/product/use-product.svelte.js b/dist/composables/product/use-product.svelte.js
+index b6d7399a689962ad7b17016baa1cb183b6e5697c..81bb09cb9e40ab13d78c644ed2b12d2fdf6397a2 100644
+--- a/dist/composables/product/use-product.svelte.js
++++ b/dist/composables/product/use-product.svelte.js
+@@ -7,6 +7,15 @@ import { deepCopy, fireGTagEvent } from '../../utils/index.js';
+ import { meilisearchService, productService, reviewService, wishlistService } from '../../services/index.js';
+ import { getContext, onMount, setContext } from 'svelte';
+ import { toast } from 'svelte-sonner';
++// The API (litekart-api) models product/variant `images` as a string array, not a
++// comma-separated string, so call `.split(',')` only when it's actually a string.
++function toImagesArray(images) {
++    if (Array.isArray(images))
++        return images.map((i) => i.trim());
++    if (typeof images === 'string' && images)
++        return images.split(',').map((i) => i.trim());
++    return [];
++}
+ const PRODUCT_STATE_KEY = Symbol('product-state');
+ class ProductState {
+     ADD_TO_CART_MESSAGE_DURATION = 10000;
+@@ -74,9 +83,9 @@ class ProductState {
+     trustBadgesPlugin = $derived(page.data?.store?.plugins?.trustBadges);
+     productImagesArray = $derived.by(() => {
+         if (this.selectedVariant?.images)
+-            return this.selectedVariant.images.split(',').map((i) => i.trim());
++            return toImagesArray(this.selectedVariant.images);
+         else if (page.data.product.images)
+-            return page.data.product.images.split(',').map((i) => i.trim());
++            return toImagesArray(page.data.product.images);
+         return [];
+     });
+     carouselImages = $state(this.productImagesArray);
+@@ -459,10 +468,7 @@ class ProductState {
+                     name: page.data?.product?.title,
+                     // all gallery images, not just the thumbnail
+                     image: page.data?.product?.images
+-                        ? page.data.product.images
+-                            .split(',')
+-                            .map((i) => i.trim())
+-                            .filter(Boolean)
++                        ? toImagesArray(page.data.product.images).filter(Boolean)
+                         : [page.data?.product?.thumbnail].filter(Boolean),
+                     description: page.data?.product?.description,
+                     sku: page.data?.product?.sku,

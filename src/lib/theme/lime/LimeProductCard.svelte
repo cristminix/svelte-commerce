@@ -36,7 +36,7 @@
 	{#snippet content({ toggleWishlist, isWishlisted, addToCart })}
 		<article class="ll-card" data-testid="product-card-{product.id}">
 			<a class="ll-card-media" href="/products/{product.slug}" aria-label="View {product.title || product.name}">
-				<LlImage src={product.thumbnail || product?.image_url} alt={product.title || product.name} />
+				<LlImage src={product.thumbnail || product?.image_url || product?.img} alt={product.title || product.name} />
 
 				{#if wishlistPlugin?.active}
 					<button

@@ -29,7 +29,7 @@
 
 		const googleReviewsHtml = $derived(
 			data?.store?.plugins?.googleReviewsOptIn?.active
-				? `<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+				? `<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer><` + `/script>
 		  <script>
 		    window.renderOptIn = function() {
 		      window.gapi.load('surveyoptin', function() {
@@ -43,7 +43,7 @@
 		          });
 		      });
 		    }
-		  </script>`
+		  <` + `/script>`
 				: ''
 		)
 

@@ -31,6 +31,11 @@ export default defineConfig(({ command, mode }) => {
 					changeOrigin: true, // Required for CORS
 					secure: false, // Disable SSL verification if needed
 					rewrite: (path) => path.replace(/^\/static/, 'static') // Remove `/static` prefix
+				},
+				'/images': {
+					target: env.PUBLIC_LITEKART_API_URL || 'http://localhost:7000', // Backend server URL
+					changeOrigin: true, // Required for CORS
+					secure: false // Disable SSL verification if needed
 				}
 			}
 		}

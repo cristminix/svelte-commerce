@@ -15,7 +15,7 @@
 		product?.title || product?.name || labels.productFallbackTitle || 'Product'
 	)
 	// No stand-in product photo: a product without an image simply shows none.
-	const image = $derived(product?.thumbnail || product?.image_url || product?.image || '')
+	const image = $derived(product?.thumbnail || product?.image_url || product?.image || product?.img || '')
 	const discount = $derived(product?.mrp && product?.mrp > product?.price ? Math.round(((product.mrp - product.price) / product.mrp) * 100) : 0)
 </script>
 

@@ -60,9 +60,9 @@
 				aria-label="View details of {product.name}"
 			>
 				<figure title={product.name} data-testid="product-card-image-container" class="relative">
-					{#if product.thumbnail || product?.image_url}
+					{#if product.thumbnail || product?.image_url || product?.img}
 						<LazyImg
-							src={product.thumbnail || product?.image_url}
+							src={product.thumbnail || product?.image_url || product?.img}
 							alt="{product.title || product.name} product image"
 							sizes="(min-width: 1024px) 25vw, (min-width: 768px) 38vw, 50vw"
 							class="w-full rounded-md object-top object-contain transition-transform duration-500"
