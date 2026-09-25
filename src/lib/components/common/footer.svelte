@@ -195,8 +195,8 @@
 									</a>
 									. All Rights Reserved.
 								{/if}
-								<a target="_blank" href="https://litekart.in" class="uppercase text-xs font-bold text-foreground transition-colors hover:text-primary">
-									Powered by Litekart
+								<a target="_blank" href="https://pawon.net" class="uppercase text-xs font-bold text-foreground transition-colors hover:text-primary">
+									Powered by PT Pawon Gemilang Rasa
 								</a>
 								<span class="foot-version ml-1 font-normal normal-case tracking-normal text-muted-foreground/70">{version}</span>
 							</span>
