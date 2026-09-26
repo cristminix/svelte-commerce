@@ -117,6 +117,13 @@
 						alt={item.title || `Promo Banner ${index + 1}`}
 						class="size-full object-cover"
 						data-testid={`banner-image-${index}`}
+						onerror={(e) => {
+							const target = e.currentTarget as HTMLImageElement
+							if (!target.dataset.fallback) {
+								target.dataset.fallback = 'true'
+								target.src = 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=80'
+							}
+						}}
 					/>
 					{#if item.title || item.subtitle}
 						<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6 sm:p-10 text-white">

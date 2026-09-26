@@ -148,6 +148,51 @@ describe('Phase 5: Page Assembly and Mock Data', () => {
 
 			unmount(app)
 		})
+
+		it('renders banners provided from API data (data.banners)', () => {
+			const apiBanners = [
+				{
+					id: 'api-banner-1',
+					heading: 'Promo Spesial Ramadhan Dari API',
+					description: 'Diskon kilat semua produk',
+					img: 'https://images.unsplash.com/promo-api.jpg',
+					link: '/c/promo-api',
+					active: true
+				}
+			]
+
+			const app = mount(Page, {
+				target: document.body,
+				props: {
+					data: {
+						banners: apiBanners
+					}
+				}
+			})
+
+			expect(document.body.textContent).toContain('Promo Spesial Ramadhan Dari API')
+			expect(document.body.textContent).toContain('Diskon kilat semua produk')
+
+			const bannerLink = document.body.querySelector('[data-testid="hero-slide-0"] a')
+			expect(bannerLink?.getAttribute('href')).toBe('/c/promo-api')
+
+			unmount(app)
+		})
+
+		it('falls back to mock banners when API banners array is empty', () => {
+			const app = mount(Page, {
+				target: document.body,
+				props: {
+					data: {
+						banners: []
+					}
+				}
+			})
+
+			expect(document.body.textContent).toContain(banners[0].title)
+
+			unmount(app)
+		})
 	})
 
 	describe('Storefront Layout Integration', () => {

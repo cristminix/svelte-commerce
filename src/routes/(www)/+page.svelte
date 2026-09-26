@@ -32,7 +32,7 @@
 	}
 
 	let {
-		banners = mockBanners,
+		banners: propBanners,
 		categories = mockCategories,
 		recommendationProducts = mockRecommendationProducts,
 		mallProducts = mockMallProducts,
@@ -40,6 +40,33 @@
 		favProducts = mockFavProducts,
 		data
 	}: Props = $props()
+
+	// Prioritize explicitly passed prop banners, then API banners from load data, then mockBanners fallback
+	const banners = $derived.by<BannerItem[]>(() => {
+		if (propBanners && propBanners.length > 0) {
+			return propBanners
+		}
+
+		const apiBanners = data?.banners
+		if (Array.isArray(apiBanners) && apiBanners.length > 0) {
+			const formatted = apiBanners
+				.filter((item: any) => item && (item.active === undefined || item.active))
+				.map((item: any) => ({
+					id: item.id || item._id,
+					image: item.image || item.img || item.imgCdn || item.url || '',
+					title: item.title || item.heading || '',
+					subtitle: item.subtitle || item.description || '',
+					href: item.href || item.link || '#'
+				}))
+				.filter((item: BannerItem) => Boolean(item.image))
+
+			if (formatted.length > 0) {
+				return formatted
+			}
+		}
+
+		return mockBanners
+	})
 </script>
 
 <svelte:head>
