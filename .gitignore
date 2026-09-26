@@ -24,3 +24,4 @@ playwright-report/*
 test-results/*
 .claude/settings.local.json
 stores/*
+coverage/

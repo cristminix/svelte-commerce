@@ -63,6 +63,19 @@
 		--container-width: 720px;
 		--transition-duration: 0.3s;
 		--ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+		/* Toco foundation theme tokens */
+		--toco-yellow: #FFC745;
+		--toco-yellow-hover: #f0b830;
+		--toco-dark: #212121;
+		--toco-dark-text: #1a1a1a;
+		--toco-muted: #757575;
+		--toco-light-gray: #f5f5f5;
+		--toco-red: #e53935;
+		--toco-red-light: #ffebee;
+		--toco-bonus-bg: #fff8e1;
+		--toco-bonus-text: #b78103;
+		--toco-star: #ffb800;
 	}
 
 	.dark {

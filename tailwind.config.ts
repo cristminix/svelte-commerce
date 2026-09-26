@@ -84,6 +84,19 @@ const config: Config = {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				toco: {
+					yellow: 'var(--toco-yellow, #FFC745)',
+					'yellow-hover': 'var(--toco-yellow-hover, #f0b830)',
+					dark: 'var(--toco-dark, #212121)',
+					'dark-text': 'var(--toco-dark-text, #1a1a1a)',
+					muted: 'var(--toco-muted, #757575)',
+					light: 'var(--toco-light-gray, #f5f5f5)',
+					red: 'var(--toco-red, #e53935)',
+					'red-light': 'var(--toco-red-light, #ffebee)',
+					'bonus-bg': 'var(--toco-bonus-bg, #fff8e1)',
+					'bonus-text': 'var(--toco-bonus-text, #b78103)',
+					star: 'var(--toco-star, #ffb800)'
 				}
 			},
 			borderRadius: {
@@ -122,7 +135,12 @@ const config: Config = {
 				'z-10': '0 6px 12px rgba(0, 0, 0, 0.15)'
 			},
 			fontSize: {
-				xxs: '10px'
+				xxs: '10px',
+				badge: ['11px', { lineHeight: '14px' }],
+				rating: ['12px', { lineHeight: '16px' }],
+				price: ['16px', { lineHeight: '20px' }],
+				'price-sm': ['14px', { lineHeight: '18px' }],
+				'price-lg': ['18px', { lineHeight: '24px' }]
 			}
 		}
 	},

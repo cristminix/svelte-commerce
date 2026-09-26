@@ -7,7 +7,7 @@ export default defineConfig({
 	test: {
 		environment: 'jsdom',
 		setupFiles: ['./tests/test-setup.ts'],
-		include: ['tests/**/*.{test,spec}.{js,ts}'],
+		include: ['tests/**/*.test.{js,ts}'],
 		exclude: ['node_modules', '.svelte-kit', 'src'],
 		coverage: {
 			provider: 'v8',
@@ -27,10 +27,11 @@ export default defineConfig({
 		}
 	},
 	resolve: {
+		conditions: ['browser'],
 		alias: {
 			$lib: resolve('./src/lib'),
-			$app: resolve('./src/app'),
-			$env: resolve('./src/env')
+			$app: resolve('./tests/mocks/app'),
+			$env: resolve('./tests/mocks/env')
 		}
 	}
 })
