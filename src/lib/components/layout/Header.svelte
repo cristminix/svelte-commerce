@@ -77,8 +77,8 @@
 				aria-label="Pang homepage"
 			>
 				<img src="/logo.svg" alt="Pang" class="h-8 w-auto object-contain" />
-				<span>Pang</span>
-				<span class="size-2 rounded-full bg-[#FFC745] inline-block"></span>
+				<!-- <span>Pang</span> -->
+				<!-- <span class="size-2 rounded-full bg-[#FFC745] inline-block"></span> -->
 			</a>
 
 			<!-- Search Bar (Desktop & Tablet) -->

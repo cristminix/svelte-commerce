@@ -102,8 +102,8 @@
 			<div class="lg:col-span-2">
 				<a href="/" class="flex items-center gap-2 text-2xl font-black tracking-tight text-gray-900 dark:text-white" data-testid="footer-logo">
 					<img src="/logo.svg" alt="Pang" class="h-8 w-auto object-contain" />
-					<span>Pang</span>
-					<span class="size-2 rounded-full bg-[#FFC745] inline-block"></span>
+					<!-- <span>Pang</span>
+					<span class="size-2 rounded-full bg-[#FFC745] inline-block"></span> -->
 				</a>
 				<p class="mt-3 text-sm text-gray-500 leading-relaxed max-w-sm dark:text-gray-400">
 					Platform belanja online terpercaya dengan ribuan produk berkualitas, jaminan keamanan transaksi, dan pengiriman ke seluruh nusantara.
@@ -193,7 +193,7 @@
 
 		<!-- Bottom Copyright Row -->
 		<div class="mt-8 border-t border-gray-100 pt-6 text-center text-xs text-gray-400 dark:border-gray-800">
-			<p>© {currentYear} Pang. Seluruh Hak Cipta Dilindungi.</p>
+			<p>© {currentYear} Pang. by PT. PAWON GEMILANG RASA</p>
 		</div>
 	</div>
 </footer>
