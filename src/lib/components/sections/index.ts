@@ -1,0 +1,5 @@
+export { default as HeroBanner, type BannerItem } from './HeroBanner.svelte'
+export { default as OfficialMallSection, type OfficialStoreItem } from './OfficialMallSection.svelte'
+export { default as BrandPartnersSection, type BrandPartnerItem } from './BrandPartnersSection.svelte'
+export { default as FeaturesSection, type FeatureItem } from './FeaturesSection.svelte'
+export { default as PromoSection } from './PromoSection.svelte'
