@@ -31,7 +31,8 @@ export default defineConfig({
 		alias: {
 			$lib: resolve('./src/lib'),
 			$app: resolve('./tests/mocks/app'),
-			$env: resolve('./tests/mocks/env')
+			$env: resolve('./tests/mocks/env'),
+			'kitcommerce.config': resolve('./kitcommerce.config.ts')
 		}
 	}
 })

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib/core/utils'
-	import { Truck, ShieldCheck, CreditCard, HeadphonesSupport, Sparkles } from '@lucide/svelte'
+	import { Truck, ShieldCheck, CreditCard, Headphones, Sparkles } from '@lucide/svelte'
 
 	export interface FeatureItem {
 		id: string | number
@@ -77,6 +77,8 @@
 						<ShieldCheck class="size-5" />
 					{:else if feature.icon === 'payment'}
 						<CreditCard class="size-5" />
+					{:else if feature.icon === 'support'}
+						<Headphones class="size-5" />
 					{:else}
 						<Sparkles class="size-5" />
 					{/if}

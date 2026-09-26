@@ -33,7 +33,7 @@
 			{ id: 4, name: 'Xiaomi Store', logo: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=120&q=80', slug: 'xiaomi' },
 			{ id: 5, name: 'Eiger Adventure', logo: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=120&q=80', slug: 'eiger' }
 		],
-		title = 'Toko Mall',
+		title = 'Toco Mall',
 		actionText = 'Semua Toko Mall',
 		actionHref = '/official-store',
 		class: className = '',
