@@ -13,7 +13,7 @@
 	}
 
 	let {
-		placeholder = 'Cari di toco...',
+		placeholder = 'Cari di Pang...',
 		value = $bindable(''),
 		showFilterButton = true,
 		class: className = '',

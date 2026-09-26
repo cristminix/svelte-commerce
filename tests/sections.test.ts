@@ -165,7 +165,7 @@ describe('Homepage Sections (Phase 4)', () => {
 			render(PromoSection, {})
 			expect(screen.getByTestId('promo-section')).toBeInTheDocument()
 			expect(screen.getByText('Buritan Miom Promenya!')).toBeInTheDocument()
-			expect(screen.getByText('Katalog Lengkap Produk toco')).toBeInTheDocument()
+			expect(screen.getByText('Katalog Lengkap Produk Pang')).toBeInTheDocument()
 		})
 	})
 })

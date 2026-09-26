@@ -25,7 +25,7 @@
 	/>
 
 	<PromoCard
-		title="Katalog Lengkap Produk toco"
+		title="Katalog Lengkap Produk Pang"
 		subtitle="Jelajahi jutaan produk berkualitas mulai dari gadget, fesyen, hingga perabotan rumah tangga."
 		badge="Katalog Baru"
 		ctaText="Lihat Katalog Lengkap"

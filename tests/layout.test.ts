@@ -64,11 +64,11 @@ describe('Layout Components', () => {
 	})
 
 	describe('Header Component', () => {
-		it('should render logo toco and links', () => {
+		it('should render logo Pang and links', () => {
 			render(Header, {})
 			const logo = screen.getByTestId('header-logo')
 			expect(logo).toBeInTheDocument()
-			expect(logo).toHaveTextContent('toco')
+			expect(logo).toHaveTextContent('Pang')
 		})
 
 		it('should render cart and notification badges when counts > 0', () => {
@@ -131,11 +131,11 @@ describe('Layout Components', () => {
 	})
 
 	describe('Footer Component', () => {
-		it('should render toco brand logo and company info', () => {
+		it('should render Pang brand logo and company info', () => {
 			render(Footer, {})
 			const footerLogo = screen.getByTestId('footer-logo')
 			expect(footerLogo).toBeInTheDocument()
-			expect(footerLogo).toHaveTextContent('toco')
+			expect(footerLogo).toHaveTextContent('Pang')
 		})
 
 		it('should render payment methods badges', () => {

@@ -64,7 +64,7 @@
 		--transition-duration: 0.3s;
 		--ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 
-		/* Toco foundation theme tokens */
+		/* Toco & Pang foundation theme tokens */
 		--toco-yellow: #FFC745;
 		--toco-yellow-hover: #f0b830;
 		--toco-dark: #212121;
@@ -76,6 +76,18 @@
 		--toco-bonus-bg: #fff8e1;
 		--toco-bonus-text: #b78103;
 		--toco-star: #ffb800;
+
+		--pang-yellow: #FFC745;
+		--pang-yellow-hover: #f0b830;
+		--pang-dark: #212121;
+		--pang-dark-text: #1a1a1a;
+		--pang-muted: #757575;
+		--pang-light-gray: #f5f5f5;
+		--pang-red: #e53935;
+		--pang-red-light: #ffebee;
+		--pang-bonus-bg: #fff8e1;
+		--pang-bonus-text: #b78103;
+		--pang-star: #ffb800;
 	}
 
 	.dark {

@@ -52,12 +52,12 @@
 	<div class="hidden border-b border-gray-100 bg-gray-50 py-1 text-xs text-gray-500 lg:block dark:border-gray-800 dark:bg-gray-950 dark:text-gray-400">
 		<div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 			<div class="flex items-center gap-4">
-				<a href="/download" class="hover:text-gray-900 dark:hover:text-white">Download Aplikasi toco</a>
+				<a href="/download" class="hover:text-gray-900 dark:hover:text-white">Download Aplikasi Pang</a>
 				<span class="text-gray-300 dark:text-gray-700">|</span>
 				<a href="/promo" class="font-medium text-red-600 hover:text-red-700 dark:text-red-400">Promo Hari Ini</a>
 			</div>
 			<div class="flex items-center gap-4">
-				<a href="/mitra" class="hover:text-gray-900 dark:hover:text-white">Mitra toco</a>
+				<a href="/mitra" class="hover:text-gray-900 dark:hover:text-white">Mitra Pang</a>
 				<span class="text-gray-300 dark:text-gray-700">|</span>
 				<a href="/help" class="hover:text-gray-900 dark:hover:text-white">Bantuan</a>
 				<span class="text-gray-300 dark:text-gray-700">|</span>
@@ -72,11 +72,12 @@
 			<!-- Logo -->
 			<a
 				href="/"
-				class="flex shrink-0 items-center gap-1 text-2xl font-black tracking-tight text-gray-900 transition-opacity hover:opacity-90 dark:text-white"
+				class="flex shrink-0 items-center gap-2 text-2xl font-black tracking-tight text-gray-900 transition-opacity hover:opacity-90 dark:text-white"
 				data-testid="header-logo"
-				aria-label="toco homepage"
+				aria-label="Pang homepage"
 			>
-				<span>toco</span>
+				<img src="/logo.svg" alt="Pang" class="h-8 w-auto object-contain" />
+				<span>Pang</span>
 				<span class="size-2 rounded-full bg-[#FFC745] inline-block"></span>
 			</a>
 

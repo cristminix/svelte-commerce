@@ -47,8 +47,8 @@
 	<!-- Promo Section -->
 	<PromoSection />
 
-	<!-- Favorit Toco -->
-	<Section title="Favorit Toco" viewAllHref="/products">
+	<!-- Favorit Pang -->
+	<Section title="Favorit Pang" viewAllHref="/products">
 		<ProductCarousel products={mockFavProducts} />
 	</Section>
 

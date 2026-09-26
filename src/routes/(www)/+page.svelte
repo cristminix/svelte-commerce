@@ -43,10 +43,10 @@
 </script>
 
 <svelte:head>
-	<title>Toco - Jual Beli Online Mudah & Terpercaya</title>
+	<title>Pang - Jual Beli Online Mudah & Terpercaya</title>
 	<meta
 		name="description"
-		content="Toco Marketplace Indonesia - Pilihan Khusus Untukmu, Official Mall, Promo Menarik, dan Brand Ternama"
+		content="Pang Marketplace Indonesia - Pilihan Khusus Untukmu, Official Mall, Promo Menarik, dan Brand Ternama"
 	/>
 </svelte:head>
 
@@ -68,8 +68,8 @@
 	<!-- 7. Promo Section -->
 	<PromoSection />
 
-	<!-- 8. Favorit Toco -->
-	<Section title="Favorit Toco" viewAllHref="/products">
+	<!-- 8. Favorit Pang -->
+	<Section title="Favorit Pang" viewAllHref="/products">
 		<ProductCarousel products={favProducts} />
 	</Section>
 

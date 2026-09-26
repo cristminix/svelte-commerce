@@ -32,7 +32,7 @@
 				]
 			},
 			{
-				title: 'Tentang toco',
+				title: 'Tentang Pang',
 				links: [
 					{ label: 'Tentang Kami', href: '/about' },
 					{ label: 'Karir', href: '/careers' },
@@ -46,8 +46,8 @@
 				links: [
 					{ label: 'Daftar Toko Resmi', href: '/official-store' },
 					{ label: 'Mitra Logistik', href: '/logistik' },
-					{ label: 'Mulai Berjualan di toco', href: '/auth/join-as-vendor' },
-					{ label: 'Afiliasi toco', href: '/affiliate' }
+					{ label: 'Mulai Berjualan di Pang', href: '/auth/join-as-vendor' },
+					{ label: 'Afiliasi Pang', href: '/affiliate' }
 				]
 			}
 		],
@@ -100,8 +100,9 @@
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
 			<!-- Col 1: Brand Info & App Download -->
 			<div class="lg:col-span-2">
-				<a href="/" class="flex items-center gap-1 text-2xl font-black tracking-tight text-gray-900 dark:text-white" data-testid="footer-logo">
-					<span>toco</span>
+				<a href="/" class="flex items-center gap-2 text-2xl font-black tracking-tight text-gray-900 dark:text-white" data-testid="footer-logo">
+					<img src="/logo.svg" alt="Pang" class="h-8 w-auto object-contain" />
+					<span>Pang</span>
 					<span class="size-2 rounded-full bg-[#FFC745] inline-block"></span>
 				</a>
 				<p class="mt-3 text-sm text-gray-500 leading-relaxed max-w-sm dark:text-gray-400">
@@ -192,7 +193,7 @@
 
 		<!-- Bottom Copyright Row -->
 		<div class="mt-8 border-t border-gray-100 pt-6 text-center text-xs text-gray-400 dark:border-gray-800">
-			<p>© {currentYear} toco. Seluruh Hak Cipta Dilindungi.</p>
+			<p>© {currentYear} Pang. Seluruh Hak Cipta Dilindungi.</p>
 		</div>
 	</div>
 </footer>

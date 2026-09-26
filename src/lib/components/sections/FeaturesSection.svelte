@@ -44,7 +44,7 @@
 				icon: 'support'
 			}
 		],
-		title = 'Fitur Unggulan & Layanan toco',
+		title = 'Fitur Unggulan & Layanan Pang',
 		class: className = '',
 		...restProps
 	}: Props = $props()

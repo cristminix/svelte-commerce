@@ -97,6 +97,19 @@ const config: Config = {
 					'bonus-bg': 'var(--toco-bonus-bg, #fff8e1)',
 					'bonus-text': 'var(--toco-bonus-text, #b78103)',
 					star: 'var(--toco-star, #ffb800)'
+				},
+				pang: {
+					yellow: 'var(--pang-yellow, #FFC745)',
+					'yellow-hover': 'var(--pang-yellow-hover, #f0b830)',
+					dark: 'var(--pang-dark, #212121)',
+					'dark-text': 'var(--pang-dark-text, #1a1a1a)',
+					muted: 'var(--pang-muted, #757575)',
+					light: 'var(--pang-light-gray, #f5f5f5)',
+					red: 'var(--pang-red, #e53935)',
+					'red-light': 'var(--pang-red-light, #ffebee)',
+					'bonus-bg': 'var(--pang-bonus-bg, #fff8e1)',
+					'bonus-text': 'var(--pang-bonus-text, #b78103)',
+					star: 'var(--pang-star, #ffb800)'
 				}
 			},
 			borderRadius: {

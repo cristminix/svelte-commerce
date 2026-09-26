@@ -91,15 +91,15 @@ describe('Phase 5: Page Assembly and Mock Data', () => {
 			// 4. OfficialMallSection
 			const mallSection = document.body.querySelector('[data-testid="official-mall-section"]')
 			expect(mallSection).not.toBeNull()
-			expect(document.body.textContent).toContain('Toco Mall')
+			expect(document.body.textContent).toContain('Pang Mall')
 			expect(document.body.textContent).toContain(mallProducts[0].name)
 
 			// 5. PromoSection
 			const promoSection = document.body.querySelector('[data-testid="promo-section"]')
 			expect(promoSection).not.toBeNull()
 
-			// 6. Section: Favorit Toco
-			expect(document.body.textContent).toContain('Favorit Toco')
+			// 6. Section: Favorit Pang
+			expect(document.body.textContent).toContain('Favorit Pang')
 			expect(document.body.textContent).toContain(favProducts[0].name)
 
 			// 7. BrandPartnersSection
@@ -164,7 +164,7 @@ describe('Phase 5: Page Assembly and Mock Data', () => {
 			// Header rendered via layout
 			const header = document.body.querySelector('header')
 			expect(header).not.toBeNull()
-			expect(document.body.textContent?.toLowerCase()).toContain('toco')
+			expect(document.body.textContent?.toLowerCase()).toContain('pang')
 
 			// Main slot content
 			const slot = document.body.querySelector('[data-testid="test-slot-content"]')

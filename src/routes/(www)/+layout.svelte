@@ -14,7 +14,9 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={page?.data?.store?.favicon} />
+	<link rel="icon" href={page?.data?.store?.favicon || '/favicon.ico'} />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
 </svelte:head>
 
 <div class="flex min-h-screen flex-col justify-between bg-white text-gray-800">
