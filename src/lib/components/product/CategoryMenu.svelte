@@ -44,8 +44,8 @@
 			<CategoryIcon
 				name={category.name}
 				icon={category.icon}
-				image={category.image}
-				slug={category.slug}
+				image={category.image || category.img || category.thumbnail}
+				slug={category.slug || category.href || category.link}
 				onclick={() => oncategoryclick?.(category)}
 			/>
 		{/each}

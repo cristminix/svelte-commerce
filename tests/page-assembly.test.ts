@@ -193,6 +193,48 @@ describe('Phase 5: Page Assembly and Mock Data', () => {
 
 			unmount(app)
 		})
+
+		it('renders categories provided from API data (data.categories)', () => {
+			const apiCategories = [
+				{
+					id: 'cat-api-1',
+					name: 'Kategori Khusus API',
+					slug: 'kategori-khusus-api',
+					thumbnail: 'https://example.com/cat.jpg',
+					isActive: true
+				}
+			]
+
+			const app = mount(Page, {
+				target: document.body,
+				props: {
+					data: {
+						categories: apiCategories
+					}
+				}
+			})
+
+			expect(document.body.textContent).toContain('Kategori Khusus API')
+			const catLink = document.body.querySelector('[data-category-name="Kategori Khusus API"]')
+			expect(catLink?.getAttribute('href')).toBe('/kategori-khusus-api')
+
+			unmount(app)
+		})
+
+		it('falls back to mock categories when API categories array is empty', () => {
+			const app = mount(Page, {
+				target: document.body,
+				props: {
+					data: {
+						categories: []
+					}
+				}
+			})
+
+			expect(document.body.textContent).toContain('Elektronik')
+
+			unmount(app)
+		})
 	})
 
 	describe('Storefront Layout Integration', () => {

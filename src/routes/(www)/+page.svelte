@@ -33,7 +33,7 @@
 
 	let {
 		banners: propBanners,
-		categories = mockCategories,
+		categories: propCategories,
 		recommendationProducts = mockRecommendationProducts,
 		mallProducts = mockMallProducts,
 		brands = mockBrands,
@@ -66,6 +66,35 @@
 		}
 
 		return mockBanners
+	})
+
+	// Prioritize explicitly passed prop categories, then API categories from load data, then mockCategories fallback
+	const categories = $derived.by<CategoryItem[]>(() => {
+		if (propCategories && propCategories.length > 0) {
+			return propCategories
+		}
+
+		const apiCategories = data?.categories
+		if (Array.isArray(apiCategories) && apiCategories.length > 0) {
+			const formatted = apiCategories
+				.filter((item: any) => item && (item.isActive === undefined || item.isActive) && (item.active === undefined || item.active))
+				.map((item: any) => ({
+					id: item.id || item._id,
+					name: item.name || item.title || '',
+					slug: item.slug || item.link || '',
+					image: item.image || item.img || item.thumbnail || '',
+					icon: item.icon || 'general',
+					href: item.href || (item.slug ? `/${item.slug}` : undefined),
+					badge: item.badge
+				}))
+				.filter((item: CategoryItem) => Boolean(item.name))
+
+			if (formatted.length > 0) {
+				return formatted
+			}
+		}
+
+		return mockCategories
 	})
 </script>
 
