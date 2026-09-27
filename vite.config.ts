@@ -8,11 +8,15 @@ export default defineConfig(({ command, mode }) => {
 		ssr: {
 			noExternal: ['bits-ui']
 		},
-		//preview: { port: 80, strictPort: true, host: true },
+		preview: { 
+			port: process.env.PORT ? parseInt(process.env.PORT) : 7003, 
+			strictPort: false, 
+			host: true 
+		},
 		server: {
 			allowedHosts: true, // This is required, else will "throw Blocked request. This host ("shopnx.in") is not allowed."
 			host: true,
-			port: 3000,
+			port: 7003,
 			proxy: {
 				'/medusa': {
 					target: env.PUBLIC_MEDUSA_API_URL || 'http://localhost:9000', // Backend server URL
